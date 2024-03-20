@@ -14,10 +14,10 @@ router
 
 // .get('/get-messages/:from/:to',getMessages)  // used post instead
 
-.post('/get-messages',protectRoute,getMessages1) 
+.post('/get-messages',getMessages1) 
 .post('/add-image-message',uploadImage.single("image"),addImageMessage)
 .post('/add-audio-message',uploadAudio.single("audio"),addAudioMessage)
-.get('/get-initial-contacts/:from',protectRoute, getInitialContactswithMessages)
+.get('/get-initial-contacts/:from', getInitialContactswithMessages)
 
 export default router;
 
