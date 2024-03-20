@@ -6,7 +6,7 @@ const router = Router();
 
 router.post('/check-user',checkUser)
 .post('/onboard-user', onBoardUser)
-.get('/get-contacts', protectRoute,getAllUsers)
+.get('/get-contacts',getAllUsers)
 .get('/generate-token/:userId', generateToken)
 .post('/logout', logoutUser)
 
