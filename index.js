@@ -8,6 +8,8 @@ import { Server } from "socket.io";
 
 import cookieParser from "cookie-parser";
 
+const PORT = process.env.PORT || 3005;
+
 const app = express();
 
 app.use(cookieParser());
@@ -26,8 +28,8 @@ app.use("/uploads/recordings", express.static("uploads/recordings"));
 app.use("/api/auth", AuthRoutes);
 app.use("/api/messages", MessageRoutes);
 
-const server = app.listen(process.env.PORT, () => {
-  console.log(`Server started on port ${process.env.PORT}`);
+const server = app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
 
 // creating socket server
