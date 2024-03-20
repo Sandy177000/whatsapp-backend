@@ -4,8 +4,10 @@ const protectRoute = async (req,res,next) =>{
 
     try {
 
+        next();
+
         const token = req.cookies.jwtToken; // Retrieve the JWT token from the cookie in your route/middleware function
-        
+
 
         // if token is undefined then user is not logged in 
         if(!token){
@@ -22,7 +24,6 @@ const protectRoute = async (req,res,next) =>{
         }
 
         console.log("protected endpoint")
-        next();
 
 
     } catch (error) {
