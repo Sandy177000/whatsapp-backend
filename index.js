@@ -15,7 +15,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://whatsapp2000.netlify.app",
+    origin: "http://localhost:3000",
     credentials: true
   })
 );
@@ -35,7 +35,7 @@ const server = app.listen(PORT, () => {
 // creating socket server
 const io = new Server(server, {
   cors: {
-    origin: "https://whatsapp2000.netlify.app", // client
+    origin: "http://localhost:3000", // client
   },
 });
 
